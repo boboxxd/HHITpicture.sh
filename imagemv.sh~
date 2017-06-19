@@ -1,0 +1,21 @@
+#!/bin/bash
+#checkimage
+dir1="/media/xxd/KINGSTON/output"
+#sourceimage
+dir2="/media/xxd/KINGSTON/20161108"
+ls $dir1 | grep jpg  >1.txt
+ls $dir2 | grep jpg  >2.txt
+diff -s 1.txt 2.txt >tmp.txt 
+cut -d " "  -f 2  tmp.txt > diff.txt
+
+rm 1.txt 2.txt tmp.txt
+
+#存放没问题的图片
+mkdir noresult
+for file in `cat diff.txt`
+do
+name=${file%.*}.xml
+mv $dir2/$file $dir2/$name noresult &>/dev/null
+echo "moving $file and $name......."
+done
+rm diff.txt

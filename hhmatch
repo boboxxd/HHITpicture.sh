@@ -1,0 +1,26 @@
+#!/bin/bash
+ls | grep "jpg$" >>/dev/null || ls | grep "xml$"  >>/dev/null
+
+if [ $? -eq 1 ]
+then
+echo "sorry,no jpg or xml here !"
+exit
+fi
+
+for file in *jpg
+do
+name=${file%.*}.xml
+if [ ! -f $name ]; then 
+echo $file
+#echo $name
+fi
+done
+
+for file in *xml
+do
+xname=${file%.*}.jpg
+if [ ! -f $xname ]; then 
+echo $file
+fi
+done
+

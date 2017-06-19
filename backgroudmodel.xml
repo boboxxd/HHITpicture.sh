@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<annotation>
+	<folder>XXD1</folder>
+	<filename>XXD2</filename>
+	<path>XXD6</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>XXD4</width>
+		<height>XXD5</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+</annotation>
